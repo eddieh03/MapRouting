@@ -1,25 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+public class DirectedEdge {
 
-
-public class DirectedEdge { 
-    private final int v;
-    private final int w;
-    private final double weight;
+    private final int v;//the tail vertex
+    private final int w; // w the head vertex
+    private final double weight; //the weight of the directed edge
     private boolean rushHour;
 
-    /**
-     * Initializes a directed edge from vertex {@code v} to vertex {@code w} with
-     * the given {@code weight}.
-     * @param v the tail vertex
-     * @param w the head vertex
-     * @param weight the weight of the directed edge
-     * @throws IllegalArgumentException if either {@code v} or {@code w}
-     *    is a negative integer
-     * @throws IllegalArgumentException if {@code weight} is {@code NaN}
-     */
     public DirectedEdge(int v, int w, double weight,boolean rushHour) {
         if (v < 0) throw new IllegalArgumentException("Vertex names must be non-negative integers");
         if (w < 0) throw new IllegalArgumentException("Vertex names must be non-negative integers");
@@ -37,7 +22,6 @@ public class DirectedEdge {
 
     /**
      * Returns the tail vertex of the directed edge.
-     * @return the tail vertex of the directed edge
      */
     public int from() {
         return v;
@@ -45,7 +29,6 @@ public class DirectedEdge {
 
     /**
      * Returns the head vertex of the directed edge.
-     * @return the head vertex of the directed edge
      */
     public int to() {
         return w;
@@ -53,7 +36,6 @@ public class DirectedEdge {
 
     /**
      * Returns the weight of the directed edge.
-     * @return the weight of the directed edge
      */
     public double weight() {
         return weight;
@@ -61,11 +43,8 @@ public class DirectedEdge {
 
     /**
      * Returns a string representation of the directed edge.
-     * @return a string representation of the directed edge
      */
     public String toString() {
         return v + "->" + w + " " + String.format("%5.2f", weight);
-    }
-
-   
+    }  
 }

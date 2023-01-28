@@ -1,12 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 
 public class Bag<Item> implements Iterable<Item> {
     private Node<Item> first;    // beginning of bag
@@ -28,9 +21,6 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Returns true if this bag is empty.
-     *
-     * @return {@code true} if this bag is empty;
-     *         {@code false} otherwise
      */
     public boolean isEmpty() {
         return first == null;
@@ -38,17 +28,13 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Returns the number of items in this bag.
-     *
-     * @return the number of items in this bag
-     */
+    */
     public int size() {
         return n;
     }
 
     /**
      * Adds the item to this bag.
-     *
-     * @param  item the item to add to this bag
      */
     public void add(Item item) {
         Node<Item> oldfirst = first;
@@ -58,12 +44,9 @@ public class Bag<Item> implements Iterable<Item> {
         n++;
     }
 
-
     /**
      * Returns an iterator that iterates over the items in this bag in arbitrary order.
-     *
-     * @return an iterator that iterates over the items in this bag in arbitrary order
-     */
+    */
     public Iterator<Item> iterator()  {
         return new LinkedIterator(first);  
     }
@@ -71,7 +54,6 @@ public class Bag<Item> implements Iterable<Item> {
     // an iterator, doesn't implement remove() since it's optional
     private class LinkedIterator implements Iterator<Item> {
         private Node<Item> current;
-
         public LinkedIterator(Node<Item> first) {
             current = first;
         }
